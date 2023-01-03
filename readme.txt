@@ -1,8 +1,10 @@
 1. Navigation Bar Component
-- On App.js, using the Outlet component we can nest routes and have persistant rendering
+- Create Navigation Route Component
+- import {Outlet} from 'react-router-dom'
+NOTE: using the Outlet component we can nest routes and have persistant rendering
+- On App.js, Import our Navigation Component
 - Make our Route component a two way tag, which is our parent route. Components wrapped
-are our children components.
-- Place our Navigation Component into routes and import into App.js
+are our child components (which is our Outlet).
 
 2. React Router Link
 - On Navigation.jsx, using the Link Component, we can link to different routes. 
