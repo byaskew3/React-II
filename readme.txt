@@ -1,34 +1,26 @@
-1. Scaffolding Our Ecommerce Project
-- Initialize starter code for React
-(npx create-react-app)
-NOTE: Remember to cd into your React folder
-- Delete unnecessary files from folder
-- Build our components based on our outline
-- create categories array on App.js
+1. Finish Creating User Documents
+- Now that we're getting the user document data with getDoc(), we have to check,
+if the user does not exist in our database, create them using setDoc(), otherwise
+return userDocRef
+- verify if our user gets stored in our database
 
-2. Category List Component
-- create components folder
-- Create CategoryList.jsx, CategoryList.css (Copy and Paste css from completed code)
-- import CategoryItem Component (Does not exist yet)
-- import CategoryList Component into App.js
+2. Creating Sign Up Form
+- On firebase site, on sign-in method, add a new provider (Email/Password)
+- Add SignUpForm Component to our components folder
+- Create the basic info for the form and import it to our SignIn Route Component
+- Go back and add the useState hook to keep track of our input field values
+- Create handleChange Method to setStates
+- verify in console
 
-3. Category Item Component
-- create CategoryItem.jsx, CategoryItem.css (Copy and Paste css from completed code)
-- import CategoryItem Component to App.js
-
-4. Adding Google Fonts
-- link our selected font inside our index.html
-- use our font-family in our CategoryItem.css
-
-5. Routing with React Router v6
-- npm install react-router-dom (to specify which version react-router-dom@6)
-
-6. Setting up our Homepage
-- import { BrowserRouter } from 'react-router-dom' on index.js
-- wrap our BrowserRouter Component around our App Component
-- create routes folder in src
-- create our home route component
-- copy and paste our App Component to our Home Route
-- import Home Route Component into our App
-- import { Routes, Route } from 'react-router-dom' on App.js
-- Utilize Routes & Route Component with Home component
+3. Add Sign Up Values to database
+- on firebase.js, import { createUserWithEmailAndPassword } from 'firebase/auth'
+- create createAuthUserWithEmailAndPassword async function
+- import {createAuthUserWithEmailAndPassword} into SignUpForm Component
+- create handleSubmit async method
+NOTE: We'll need explicitly handle displayName value bc when we sign in with google, we get a 
+value back, when we sign up utilizing the form, we do not get a value
+- on firebase.js, add signUpName=null as a parameter to createUserDocument method
+- inside of our try/catch block, create an if,else to determine if we're not getting a signUpName
+value, then don't do anything, otherwise setDoc should have "displayName: signUpName"
+- on SignUpForm, create resetFormFields Method
+- implement resetFormFields under our await createUserDocument()

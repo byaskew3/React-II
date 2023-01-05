@@ -1,5 +1,4 @@
 import "./CategoryItem.css";
-import React from "react";
 
 const CategoryItem = ({ category }) => {
   return (
@@ -8,7 +7,7 @@ const CategoryItem = ({ category }) => {
         className="background-image"
         style={{ backgroundImage: `url(${category.imgUrl})` }}
       ></div>
-      <div className="category-body-container">
+      <div className="category-body-container" >
         <h2>{category.title}</h2>
         <p>Shop Now</p>
       </div>
